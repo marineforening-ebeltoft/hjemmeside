@@ -256,6 +256,107 @@ body{padding-bottom:48px}
 .activity-tuesday-photo{display:block;width:100%;height:220px;object-fit:cover;object-position:center 38%;border-radius:8px;border:2px solid #bd9656;margin:0 0 20px}
 @media(max-width:760px){.marine-card--tuesday{grid-column:span 1;grid-template-columns:1fr}.marine-card--tuesday .marine-tuesday-photo{height:auto;max-height:none;aspect-ratio:3/4;object-fit:contain;background:#102f3e}.marine-card--tuesday .marine-card-content{padding:22px}}
 
+
+/* v2.4 — målrettet mobil- og desktopfinish. Eksisterende layout og funktioner bevares. */
+html{scroll-padding-top:86px}
+body{overflow-x:clip}
+main,.page,.wrap,.story,.detail-grid,.activity-grid,.marine-cards,.pathway-grid{min-width:0}
+img{max-width:100%}
+.header{isolation:isolate}
+.head-inner{position:relative}
+.brand{min-width:0}
+.brand strong{overflow-wrap:normal}
+/* Gør tekst og rammer konsekvent læsbare på lys baggrund */
+.home-latest .news-card{background:#fff;border:1.5px solid #b7c5c8;border-top:4px solid #bd9654}
+.home-latest .news-card h3{color:#112f3f}
+.home-latest .news-card p,.home-latest .rule-card p{color:#40555f!important;opacity:1!important}
+.home-latest .news-card .date{color:#805b29}
+.event-card,.activity,.marine-card,.detail-card,.person,.list-row,.feature-links button,.archive-photo{border-color:#bcc8cb;box-shadow:0 7px 21px rgba(9,42,57,.07)}
+.pathway{border-color:#b9c7ca}
+.marine-card p,.activity p,.detail-card p,.list-row p{color:#425963}
+.page-title p,.lead,.section-intro{color:#405965}
+/* Billeder uden utilsigtet forvrængning */
+.marine-gallery{border:2px solid #bd9656;border-radius:12px}
+.marine-gallery figure img{object-fit:contain}
+.pathway img{object-fit:cover}
+.archive-photo img{object-fit:cover}
+.activity-tuesday-photo{object-position:center 35%}
+/* Undgå at modalvinduer klippes på korte skærme */
+.modal{padding:12px}
+.modal-box{max-height:calc(100dvh - 24px);overscroll-behavior:contain}
+/* Hold bundbjælken enkel og læsbar */
+.ticker-window{min-width:0;overflow:hidden}
+.ticker-item{min-height:42px}
+.ticker-inner{gap:12px}
+@media(max-width:1000px){
+ .nav button{padding:11px 6px;font-size:12px}
+ .head-inner{gap:10px}
+}
+@media(max-width:900px){
+ .header{position:sticky;top:0;z-index:90}
+ .mobile-menu{position:absolute;top:100%;left:0;right:0;z-index:92;display:none;background:#0a3147;padding:12px max(17px,calc((100vw - 1190px)/2)) 18px;border-top:1px solid #ffffff33;box-shadow:0 15px 30px rgba(0,20,32,.25);max-height:calc(100dvh - 70px);overflow-y:auto;overscroll-behavior:contain}
+ .mobile-menu.open{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px}
+ .mobile-menu button{font-size:14px;line-height:1.35;min-height:46px;padding:12px;border:1px solid #ffffff22;border-radius:7px;background:#ffffff0a;color:#fff}
+ .mobile-menu button.active{background:#b89455;color:#082b40;border-color:#d3b47d}
+ .hamb{flex-shrink:0}
+ .story{grid-template-columns:1fr;gap:26px}
+ .story img{height:auto;max-height:430px;object-fit:contain;background:#0b2f41}
+}
+@media(max-width:760px){
+ .topline{padding:6px 12px;font-size:9px;line-height:1.4;letter-spacing:.06em}
+ .header .head-inner{min-height:65px}
+ .brand{gap:9px;max-width:calc(100% - 63px)}
+ .brand-mark{width:38px;height:38px;flex:0 0 38px}
+ .brand strong{font-size:clamp(13px,3.7vw,17px);line-height:1.2}
+ .brand small{font-size:9px;letter-spacing:.17em}
+ .hamb{width:49px;height:49px;display:grid;place-items:center;font-size:22px}
+ .notice{padding:7px 14px;font-size:11px;line-height:1.4}
+ .hero{height:clamp(495px,69svh,610px);max-height:none}
+ .hero-inner{padding:34px 18px 105px;justify-content:center}
+ .hero h1{font-size:clamp(35px,8.8vw,54px);line-height:1.06;margin:13px 0 16px}
+ .hero p{font-size:15px;line-height:1.52;max-width:440px}
+ .hero-bottom{bottom:58px}
+ .hero::before,.hero-slope-line{height:clamp(75px,17vw,115px)}
+ .home-latest{padding:37px 0 45px}
+ .home-latest-header{gap:13px}
+ .home-latest-header h2{font-size:clamp(33px,8vw,48px)}
+ .home-latest .news-card{padding:22px;min-height:0}
+ .home-latest .news-card h3{font-size:clamp(23px,6vw,29px)}
+ .home-latest .news-card p{font-size:15px;line-height:1.6}
+ .page-title{padding:38px 0 34px}
+ .page-title h1{font-size:clamp(34px,8vw,46px)}
+ .detail-grid,.activity-grid,.people,.marine-cards{grid-template-columns:1fr}
+ .detail-card,.activity,.marine-card{padding:22px}
+ .detail-card h3,.activity h3,.marine-card h3{font-size:clamp(22px,6vw,27px)}
+ .marine-gallery{aspect-ratio:4/3;max-height:380px}
+ .marine-gallery-controls{flex-wrap:wrap;align-items:center;gap:8px}
+ .marine-gallery-controls button{min-height:44px}
+ .marine-card--tuesday{grid-template-columns:1fr;padding:0}
+ .marine-card--tuesday .marine-tuesday-photo{width:100%;height:auto;aspect-ratio:3/4;max-height:none;object-fit:contain;object-position:center;background:#0b3042}
+ .activity-tuesday-photo{height:auto;aspect-ratio:3/4;max-height:450px;object-fit:contain;background:#0b3042}
+ .archive-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .archive-photo img{height:auto;aspect-ratio:4/3}
+ .footer-inner{gap:20px}
+ .ticker{z-index:75}
+ .ticker-inner{min-height:43px;padding:4px 0}
+ .ticker-item{font-size:12px;min-height:37px}
+ body{padding-bottom:46px}
+}
+@media(max-width:390px){
+ .brand strong{font-size:13px}
+ .brand-mark{width:35px;height:35px;flex-basis:35px}
+ .header .head-inner{min-height:61px}
+ .mobile-menu.open{grid-template-columns:1fr}
+ .hero{height:510px}
+ .hero h1{font-size:clamp(32px,8.6vw,39px)}
+ .hero .actions{gap:8px}
+ .hero .btn{font-size:12px;padding:11px 12px}
+ .hero-bottom{bottom:54px}
+ .footer-inner{grid-template-columns:1fr}
+ .footer-about{grid-column:auto}
+}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none!important}.ticker-window{overflow-x:auto}.marine-gallery figure img{animation:none!important}}
+
 </style></head><body>
 
 <!-- Åbningsintro: vises én gang pr. browserfane, kan springes over -->
@@ -288,7 +389,7 @@ body{padding-bottom:48px}
 
 </section>
 <div id="subpage" class="page"><div class="page-title"><div class="wrap"><div class="kicker" id="pageKicker">MARINEFORENINGEN</div><h1 id="pageHeading"></h1><p id="pageIntro"></p></div></div><div class="section"><div class="wrap" id="pageBody"></div></div></div>
-</main><footer class="footer"><div class="wrap footer-inner"><div class="footer-about"><span class="footer-anchor" aria-hidden="true">⚓</span><strong>Ebeltoft Marineforening</strong><p>Et maritimt fællesskab siden 1917.</p><p>Stockflethsvej 7 · Ebeltoft</p></div><div class="footer-links"><span class="footer-title">UDFORSK</span><button onclick="go('arrangementer')">Arrangementer</button><button onclick="go('aktiviteter')">Aktiviteter</button><button onclick="go('frivillige')">Bliv frivillig</button><button onclick="go('historie')">Historisk arkiv</button></div><div class="footer-links"><span class="footer-title">FORENINGEN</span><button onclick="go('bestyrelse')">Bestyrelsen</button><button onclick="go('marinestuen')">Marinestuen</button><button onclick="go('medlem')">Bliv medlem</button><button onclick="go('admin')">Demo-administration</button></div></div><div class="wrap footer-bottom"><span>© Ebeltoft Marineforening · Designudkast v2.3</span><button onclick="go('forside')">Til forsiden ↑</button></div></footer>
+</main><footer class="footer"><div class="wrap footer-inner"><div class="footer-about"><span class="footer-anchor" aria-hidden="true">⚓</span><strong>Ebeltoft Marineforening</strong><p>Et maritimt fællesskab siden 1917.</p><p>Stockflethsvej 7 · Ebeltoft</p></div><div class="footer-links"><span class="footer-title">UDFORSK</span><button onclick="go('arrangementer')">Arrangementer</button><button onclick="go('aktiviteter')">Aktiviteter</button><button onclick="go('frivillige')">Bliv frivillig</button><button onclick="go('historie')">Historisk arkiv</button></div><div class="footer-links"><span class="footer-title">FORENINGEN</span><button onclick="go('bestyrelse')">Bestyrelsen</button><button onclick="go('marinestuen')">Marinestuen</button><button onclick="go('medlem')">Bliv medlem</button><button onclick="go('admin')">Demo-administration</button></div></div><div class="wrap footer-bottom"><span>© Ebeltoft Marineforening · Designudkast v2.4</span><button onclick="go('forside')">Til forsiden ↑</button></div></footer>
 <aside class="ticker" id="ticker" aria-label="Aktuelle arrangementer og frivillige opgaver"><div class="wrap ticker-inner"><span class="ticker-label">AKTUELT</span><div class="ticker-window" aria-label="Rullende nyheder og aktiviteter"><div class="ticker-track" id="tickerTrack"></div></div></div></aside>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><button class="close" onclick="closeModal()" aria-label="Luk">×</button><h2 id="modalTitle"></h2><div id="modalContent"></div></div></div>
 <script>
@@ -310,8 +411,8 @@ try{if(localStorage.getItem('ebeltoft-marine-activities-version')!=='1.6'){
 }}catch(e){console.warn('Kunne ikke gemme aktivitetsopdateringen',e)}
 function save(){localStorage.setItem(KEY,JSON.stringify(db));if(document.getElementById('ticker'))updateTicker()}function esc(x){return String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function fmtDate(d){if(!d)return 'Dato følger';let x=new Date(d+'T12:00:00');return isNaN(x)?esc(d):x.toLocaleDateString('da-DK',{day:'numeric',month:'long',year:'numeric'})}function count(id){return db.registrations.filter(r=>r.target===id).reduce((s,r)=>s+Number(r.count||1),0)}function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}function validEmail(x){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(x)}
 function navRender(){document.getElementById('desktopNav').innerHTML=nav.map(([id,label])=>`<button data-nav="${id}" onclick="go('${id}')">${label}</button>`).join('');document.getElementById('mobileNav').innerHTML=nav.map(([id,label])=>`<button data-nav="${id}" onclick="go('${id}')">${label}</button>`).join('')}
-function toggleMenu(){let el=document.getElementById('mobileNav');el.classList.toggle('open');document.getElementById('menuToggle').setAttribute('aria-expanded',el.classList.contains('open'))}
-function go(page){if(!nav.some(n=>n[0]===page))page='forside';document.getElementById('mobileNav').classList.remove('open');document.getElementById('menuToggle').setAttribute('aria-expanded','false');document.querySelectorAll('[data-nav]').forEach(b=>b.classList.toggle('active',b.dataset.nav===page));document.getElementById('homePage').classList.toggle('active',page==='forside');document.getElementById('subpage').classList.toggle('active',page!=='forside');if(page==='forside')renderHome();else renderPage(page);history.replaceState(null,'','#'+page);window.scrollTo({top:0,behavior:'instant'})}
+function toggleMenu(){const el=document.getElementById('mobileNav'),btn=document.getElementById('menuToggle');el.classList.toggle('open');const open=el.classList.contains('open');btn.setAttribute('aria-expanded',String(open));btn.setAttribute('aria-label',open?'Luk menu':'Åbn menu')}
+function go(page){if(!nav.some(n=>n[0]===page))page='forside';const mobile=document.getElementById('mobileNav'),toggle=document.getElementById('menuToggle');mobile.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Åbn menu');document.querySelectorAll('[data-nav]').forEach(b=>b.classList.toggle('active',b.dataset.nav===page));document.getElementById('homePage').classList.toggle('active',page==='forside');document.getElementById('subpage').classList.toggle('active',page!=='forside');if(page==='forside')renderHome();else renderPage(page);history.replaceState(null,'','#'+page);window.scrollTo(0,0);requestAnimationFrame(()=>window.scrollTo(0,0))}
 let currentSlide=0,slideTimer,slidePaused=false;function renderSlides(){clearInterval(slideTimer);const list=siteSettings.slides;document.getElementById('slides').innerHTML=list.map((item,i)=>`<div class="slide ${i===0?'active':''}"><img src="${esc(item.src)}" alt="${esc(item.alt)}" ${i===0?'fetchpriority="high"':'loading="eager"'} onerror="this.closest('.slide').classList.add('image-missing')"></div>`).join('');document.getElementById('slideDots').innerHTML=list.map((_,i)=>`<button class="${i===0?'on':''}" onclick="setSlide(${i})" aria-label="Vis billede ${i+1}"></button>`).join('');currentSlide=0;setSlide(0);slidePaused=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(!slidePaused)slideTimer=setInterval(()=>{if(!slidePaused)setSlide((currentSlide+1)%list.length)},4000)}function setSlide(i){currentSlide=i;document.querySelectorAll('.slide').forEach((s,j)=>s.classList.toggle('active',j===i));document.querySelectorAll('#slideDots button').forEach((s,j)=>s.classList.toggle('on',j===i));document.getElementById('slideLabel').textContent=siteSettings.slides[i]?.alt||''}function toggleSlides(){slidePaused=!slidePaused;if(!slidePaused&&!slideTimer)slideTimer=setInterval(()=>{if(!slidePaused)setSlide((currentSlide+1)%siteSettings.slides.length)},4000)}
 let tickerItems=[],tickerPaused=false;
 function updateTicker(){
@@ -383,7 +484,9 @@ function editEntry(kind,id){let old=id?db[kind].find(x=>x.id===id):null;document
 function deleteEntry(kind,id){if(!confirm('Slet denne post?'))return;db[kind]=db[kind].filter(o=>o.id!==id);save();renderAdmin()}
 function removeReg(id){if(!confirm('Slet testtilmeldingen?'))return;db.registrations=db.registrations.filter(r=>r.id!==id);save();renderAdmin()}
 function exportCSV(){let rows=[['Navn','E-mail','Aktivitet','Antal','Dato']];for(let r of db.registrations){let t=[...db.events,...db.tasks].find(x=>x.id===r.target);rows.push([r.name,r.email,t?.title||'',r.count,r.created])}let safe=x=>{let s=String(x??'');if(/^[=+\-@\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"'};let csv='\ufeff'+rows.map(r=>r.map(safe).join(';')).join('\r\n');let a=document.createElement('a'),u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.href=u;a.download='marineforening-testtilmeldinger.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),500)}
-navRender();renderSlides();go((location.hash||'#forside').slice(1));window.addEventListener('hashchange',()=>go(location.hash.slice(1)));
+navRender();renderSlides();if('scrollRestoration' in history)history.scrollRestoration='manual';go((location.hash||'#forside').slice(1));window.addEventListener('hashchange',()=>go(location.hash.slice(1)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const menu=document.getElementById('mobileNav');if(menu.classList.contains('open')){menu.classList.remove('open');const btn=document.getElementById('menuToggle');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Åbn menu');btn.focus()}}});
+document.addEventListener('click',e=>{const menu=document.getElementById('mobileNav');if(menu.classList.contains('open')&&!e.target.closest('.header')){menu.classList.remove('open');const btn=document.getElementById('menuToggle');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Åbn menu')}});
 </script>
 <script>
 /* Uafhængig af hjemmesidens eksisterende navigation og slideshow. */
