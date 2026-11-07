@@ -229,7 +229,36 @@ body{padding-bottom:48px}
 .archive-modal-caption{color:#445962;margin:10px 0 0}
 @media(max-width:900px){.archive-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.archive-gallery{gap:10px}.archive-photo img{height:125px}.archive-photo span{font-size:12px;padding:10px}.archive-pending{padding:18px}.member-actions{align-items:stretch;flex-direction:column}.member-actions .btn{width:100%}}
+
+/* v2.2 — Velkomstintro i samme stil som AKO-Reserven */
+.marine-splash{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 36%,#174459 0%,#08283b 54%,#031a29 100%);color:#f7f4ea;padding:clamp(20px,5vw,48px);opacity:1;transition:opacity .5s ease,visibility .5s ease;overflow:auto}
+.marine-splash[hidden]{display:none!important}
+.marine-splash.is-closing{opacity:0;visibility:hidden;pointer-events:none}
+.marine-splash__inner{width:min(760px,100%);display:flex;flex-direction:column;align-items:center;text-align:center;gap:0;margin:auto}
+.marine-splash__eyebrow{font-size:clamp(10px,1.5vw,12px);font-weight:700;letter-spacing:.23em;text-transform:uppercase;color:#d8b679;margin:0 0 22px}
+.marine-splash__frame{width:min(650px,100%);max-height:52vh;display:grid;place-items:center;overflow:hidden;border:1px solid rgba(211,177,111,.55);box-shadow:0 22px 62px rgba(0,0,0,.42);background:#0c3349;border-radius:8px}
+.marine-splash__image{display:block;width:100%;height:auto;max-height:52vh;object-fit:contain;transform:scale(1.075);animation:marine-splash-zoom 6.1s cubic-bezier(.17,.5,.25,1) forwards;will-change:transform}
+@keyframes marine-splash-zoom{from{transform:scale(1.075)}to{transform:scale(1)}}
+.marine-splash__title{font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(29px,5.3vw,49px);line-height:1.13;letter-spacing:-.025em;margin:25px 0 10px;text-wrap:balance}
+.marine-splash__subtitle{font-size:clamp(13px,2.3vw,17px);line-height:1.5;color:#d7e1e3;margin:0}
+.marine-splash__rule{width:76px;height:2px;background:#c49c59;margin:19px 0 20px}
+.marine-splash__skip{min-height:44px;padding:9px 22px;border:1px solid #d4b57c;border-radius:6px;color:#f9f6ef;background:rgba(7,43,62,.75);font-size:14px;font-weight:700;cursor:pointer;transition:background .2s ease}
+.marine-splash__skip:hover,.marine-splash__skip:focus-visible{background:#22536b}
+@media(max-width:600px){.marine-splash{padding:22px 16px}.marine-splash__eyebrow{margin-bottom:16px}.marine-splash__frame{max-height:44vh}.marine-splash__image{max-height:44vh}.marine-splash__title{margin-top:22px}.marine-splash__rule{margin:16px 0 18px}}
+@media(prefers-reduced-motion:reduce){.marine-splash__image{animation:none;transform:none}.marine-splash{transition:none}}
 </style></head><body>
+
+<!-- Åbningsintro: vises én gang pr. browserfane, kan springes over -->
+<div id="marineIntro" class="marine-splash" role="dialog" aria-modal="true" aria-labelledby="marineIntroTitle" aria-describedby="marineIntroSubtitle" hidden>
+  <div class="marine-splash__inner">
+    <p class="marine-splash__eyebrow">Søfart · Traditioner · Fællesskab</p>
+    <div class="marine-splash__frame"><img class="marine-splash__image" src="assets/img/velkomst-sejlskib.jpg" alt="Sejlskib med fuld rigning på åbent hav" width="588" height="339" fetchpriority="high"></div>
+    <h2 id="marineIntroTitle" class="marine-splash__title">Velkommen til Ebeltoft Marineforening</h2>
+    <p id="marineIntroSubtitle" class="marine-splash__subtitle">Et maritimt fællesskab siden 1917</p>
+    <span class="marine-splash__rule" aria-hidden="true"></span>
+    <button id="marineIntroSkip" class="marine-splash__skip" type="button">Spring over →</button>
+  </div>
+</div>
 <div class="topline">EBELTOFT MARINEFORENING · ET MARITIMT FÆLLESSKAB SIDEN 1917</div>
 <header class="header"><div class="wrap head-inner"><a class="brand" href="#forside" onclick="go('forside')"><span class="brand-mark" aria-hidden="true">⚓</span><span><strong>Ebeltoft Marineforening</strong><small>SIDEN 1917</small></span></a><nav class="nav" id="desktopNav"></nav><button class="hamb" onclick="toggleMenu()" aria-label="Åbn menu" aria-expanded="false" id="menuToggle">☰</button></div><nav class="mobile-menu" id="mobileNav"></nav></header>
 <div class="notice">DEMO · Arrangementer og tilmeldinger er eksempler. Data gemmes kun i denne browser – indtast ikke personoplysninger.</div>
@@ -249,7 +278,7 @@ body{padding-bottom:48px}
 
 </section>
 <div id="subpage" class="page"><div class="page-title"><div class="wrap"><div class="kicker" id="pageKicker">MARINEFORENINGEN</div><h1 id="pageHeading"></h1><p id="pageIntro"></p></div></div><div class="section"><div class="wrap" id="pageBody"></div></div></div>
-</main><footer class="footer"><div class="wrap footer-inner"><div class="footer-about"><span class="footer-anchor" aria-hidden="true">⚓</span><strong>Ebeltoft Marineforening</strong><p>Et maritimt fællesskab siden 1917.</p><p>Stockflethsvej 7 · Ebeltoft</p></div><div class="footer-links"><span class="footer-title">UDFORSK</span><button onclick="go('arrangementer')">Arrangementer</button><button onclick="go('aktiviteter')">Aktiviteter</button><button onclick="go('frivillige')">Bliv frivillig</button><button onclick="go('historie')">Historisk arkiv</button></div><div class="footer-links"><span class="footer-title">FORENINGEN</span><button onclick="go('bestyrelse')">Bestyrelsen</button><button onclick="go('marinestuen')">Marinestuen</button><button onclick="go('medlem')">Bliv medlem</button><button onclick="go('admin')">Demo-administration</button></div></div><div class="wrap footer-bottom"><span>© Ebeltoft Marineforening · Designudkast v2.1</span><button onclick="go('forside')">Til forsiden ↑</button></div></footer>
+</main><footer class="footer"><div class="wrap footer-inner"><div class="footer-about"><span class="footer-anchor" aria-hidden="true">⚓</span><strong>Ebeltoft Marineforening</strong><p>Et maritimt fællesskab siden 1917.</p><p>Stockflethsvej 7 · Ebeltoft</p></div><div class="footer-links"><span class="footer-title">UDFORSK</span><button onclick="go('arrangementer')">Arrangementer</button><button onclick="go('aktiviteter')">Aktiviteter</button><button onclick="go('frivillige')">Bliv frivillig</button><button onclick="go('historie')">Historisk arkiv</button></div><div class="footer-links"><span class="footer-title">FORENINGEN</span><button onclick="go('bestyrelse')">Bestyrelsen</button><button onclick="go('marinestuen')">Marinestuen</button><button onclick="go('medlem')">Bliv medlem</button><button onclick="go('admin')">Demo-administration</button></div></div><div class="wrap footer-bottom"><span>© Ebeltoft Marineforening · Designudkast v2.2</span><button onclick="go('forside')">Til forsiden ↑</button></div></footer>
 <aside class="ticker" id="ticker" aria-label="Aktuelle arrangementer og frivillige opgaver"><div class="wrap ticker-inner"><span class="ticker-label">AKTUELT</span><div class="ticker-window" aria-label="Rullende nyheder og aktiviteter"><div class="ticker-track" id="tickerTrack"></div></div></div></aside>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><button class="close" onclick="closeModal()" aria-label="Luk">×</button><h2 id="modalTitle"></h2><div id="modalContent"></div></div></div>
 <script>
@@ -344,4 +373,46 @@ function deleteEntry(kind,id){if(!confirm('Slet denne post?'))return;db[kind]=db
 function removeReg(id){if(!confirm('Slet testtilmeldingen?'))return;db.registrations=db.registrations.filter(r=>r.id!==id);save();renderAdmin()}
 function exportCSV(){let rows=[['Navn','E-mail','Aktivitet','Antal','Dato']];for(let r of db.registrations){let t=[...db.events,...db.tasks].find(x=>x.id===r.target);rows.push([r.name,r.email,t?.title||'',r.count,r.created])}let safe=x=>{let s=String(x??'');if(/^[=+\-@\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"'};let csv='\ufeff'+rows.map(r=>r.map(safe).join(';')).join('\r\n');let a=document.createElement('a'),u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.href=u;a.download='marineforening-testtilmeldinger.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),500)}
 navRender();renderSlides();go((location.hash||'#forside').slice(1));window.addEventListener('hashchange',()=>go(location.hash.slice(1)));
-</script></body></html>
+</script>
+<script>
+/* Uafhængig af hjemmesidens eksisterende navigation og slideshow. */
+(function(){
+  'use strict';
+  const intro=document.getElementById('marineIntro');
+  const skip=document.getElementById('marineIntroSkip');
+  const key='ebeltoft-marine-intro-v2.2';
+  const preview=new URLSearchParams(window.location.search).get('intro')==='1';
+  let shown=false;
+  try{shown=window.sessionStorage.getItem(key)==='shown'}catch(e){}
+  if(shown&&!preview)return;
+  let timer=null,closing=false;
+  const previousFocus=document.activeElement;
+  function closeIntro(){
+    if(closing)return;
+    closing=true;
+    window.clearTimeout(timer);
+    intro.classList.add('is-closing');
+    window.removeEventListener('keydown',onKey);
+    try{if(!preview)window.sessionStorage.setItem(key,'shown')}catch(e){}
+    window.setTimeout(()=>{
+      intro.hidden=true;
+      intro.classList.remove('is-closing');
+      document.body.style.overflow='';
+      if(previousFocus&&typeof previousFocus.focus==='function'&&previousFocus!==document.body)previousFocus.focus({preventScroll:true});
+    },500);
+  }
+  function onKey(e){
+    if(e.key==='Escape'){e.preventDefault();closeIntro()}
+    if(e.key==='Tab'){
+      e.preventDefault();skip.focus();
+    }
+  }
+  intro.hidden=false;
+  document.body.style.overflow='hidden';
+  skip.addEventListener('click',closeIntro);
+  window.addEventListener('keydown',onKey);
+  skip.focus({preventScroll:true});
+  timer=window.setTimeout(closeIntro,6200);
+})();
+</script>
+</body></html>
