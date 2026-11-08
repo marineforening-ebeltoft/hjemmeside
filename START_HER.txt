@@ -1,0 +1,19 @@
+EBELTOFT MARINEFORENING – DESIGNOPDATERING V3.1
+
+Ændringer:
+- Officielt Marineforenings-emblem i topmenu, intro, footer og favicon.
+- En lav, buet afslutning under forsidens maritime billedserie.
+- Marineblå/hvid/messing; ingen ændring af navigation eller eksisterende funktioner.
+- Kabysrygtet-menuen og arkivets oversigt er bevaret.
+
+Upload til https://github.com/marineforening-ebeltoft/hjemmeside
+1. Udpak ZIP-filen på computeren.
+2. Upload index.html til repositorys HOVEDMAPPE (overskriv den gamle index.html).
+3. Upload de to filer marineforening-logo.png og marineforening-favicon.png
+   til assets/img/ i samme repository.
+4. Hvis de øvrige billeder mangler på GitHub, ligger de også i assets/img/ her.
+5. Test forsiden på både mobil og computer, og genindlæs siden.
+
+OBS: Dette er en designopdatering. Den indeholder IKKE de 44 PDF-filer.
+PDF-arkivet skal fortsat overføres til kabysrygtet/pdf/ separat.
+Supabase-admin er ikke konfigureret eller testet i produktion.
