@@ -99,7 +99,7 @@ body{padding-bottom:48px}
 /* Marinestuen – nye brugerfotos, tilpasset originalopløsning */
 .marine-gallery{position:relative;overflow:hidden;background:#0b2b3b;aspect-ratio:16/9;max-height:420px;margin:0 0 28px;border-radius:4px}
 .marine-gallery figure{position:absolute;inset:0;margin:0;opacity:0;animation:marineFade 25s infinite;pointer-events:none}
-.marine-gallery figure img{display:block;width:100%;height:100%;object-fit:contain;animation:marineBurns 25s infinite;transform-origin:center}
+.marine-gallery figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;animation:marineBurns 25s infinite;transform-origin:center}
 .marine-gallery figure:nth-child(1){animation-delay:0s}.marine-gallery figure:nth-child(2){animation-delay:5s}.marine-gallery figure:nth-child(3){animation-delay:10s}.marine-gallery figure:nth-child(4){animation-delay:15s}.marine-gallery figure:nth-child(5){animation-delay:20s}
 .marine-gallery figure:nth-child(1) img{animation-delay:0s}.marine-gallery figure:nth-child(2) img{animation-delay:5s}.marine-gallery figure:nth-child(3) img{animation-delay:10s}.marine-gallery figure:nth-child(4) img{animation-delay:15s}.marine-gallery figure:nth-child(5) img{animation-delay:20s}
 @keyframes marineFade{0%{opacity:0}3%{opacity:1}17%{opacity:1}20%,100%{opacity:0}}
@@ -279,7 +279,7 @@ img{max-width:100%}
 .page-title p,.lead,.section-intro{color:#405965}
 /* Billeder uden utilsigtet forvrængning */
 .marine-gallery{border:2px solid #bd9656;border-radius:12px}
-.marine-gallery figure img{object-fit:contain}
+.marine-gallery figure img{object-fit:cover;object-position:center}
 .pathway img{object-fit:cover}
 .archive-photo img{object-fit:cover}
 .activity-tuesday-photo{object-position:center 35%}
