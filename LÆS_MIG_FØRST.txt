@@ -1,14 +1,9 @@
-Marineforeningen – indholdsopdatering v3.3 (12. november 2026)
+MARINEFORENINGEN V3.4 – DEMO
 
-Layout og CSS er bevaret fra den vedhæftede index.html.
+Bevarer layoutet fra v3.3.
+Arrangementer med tilmelding vises særskilt. Hele programmet ligger i en fold-ud.
+Julefrokost i december har ikke fastlagt dato.
+Tre fiktive frivilligopgaver og en tilmeldingsdemonstration uden lagring af personoplysninger.
+Ingen rigtige tilmeldinger, mails eller databaseforbindelse er aktiveret.
 
-Indhold: Bestyrelse og udvalg opdateret efter det blå Kabysrygtet-billede. Kalender 16. november 2026 – 29. april 2027. Nye fotos i assets/img.
-
-VIGTIGT:
-- Upload index.html til repository-roden, og billederne til assets/img/. Overskriv IKKE hele assets/img-mappen: repoet indeholder yderligere billeder og officielle logoer, som ikke var med i uploaden.
-- admin.html medfølger som kildekopi, men er IKKE et fungerende produktions-CMS uden Supabase-konfiguration, RLS og test.
-- Kalenderen viser datoer. Online tilmelding, frivilligtilmelding og automatiske mails er IKKE aktiveret. Vi må ikke modtage personoplysninger i et demosystem.
-- Julefrokost i december og foreningsmesterskab i februar mangler præcis dato og vises derfor ikke som daterede opslag.
-- Eksisterende historiske arkiver på MONO skal bevares og sikres inden opsigelse.
-- Hvis repositoryets index.html er nyere end den vedhæftede, skal ændringerne flettes ind fremfor at overskrive nyere arbejde.
-- Nye fotos kan vises i den eksisterende Marinestuen-billedserie. Foto 02 er med i pakken, men ikke indsat i den fem-billedserie, så det nuværende layout og flow bevares.
+Upload index.html og behold eksisterende billedmapper. ZIP indeholder også tidligere billeder og admin.html.
