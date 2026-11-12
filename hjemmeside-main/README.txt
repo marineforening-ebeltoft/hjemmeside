@@ -1,0 +1,1 @@
+Ebeltoft Marineforening v2.0 – indholdsopdatering. Upload KUN index.html til roden af GitHub-repositoriet. Eksisterende assets/img bevares. Historiske tidspunkter skal bekræftes. Admin/tilmeldinger er stadig demo og lagres kun lokalt i browseren.
