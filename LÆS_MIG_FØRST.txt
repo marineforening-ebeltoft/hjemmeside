@@ -1,9 +1,14 @@
-MARINEFORENINGEN V3.4 – DEMO
+MARINEFORENINGEN V3.5 – LINKS OG KABYSRYGTET
 
-Bevarer layoutet fra v3.3.
-Arrangementer med tilmelding vises særskilt. Hele programmet ligger i en fold-ud.
-Julefrokost i december har ikke fastlagt dato.
-Tre fiktive frivilligopgaver og en tilmeldingsdemonstration uden lagring af personoplysninger.
-Ingen rigtige tilmeldinger, mails eller databaseforbindelse er aktiveret.
+Bevarer eksisterende layout.
 
-Upload index.html og behold eksisterende billedmapper. ZIP indeholder også tidligere billeder og admin.html.
+Opdateret:
+- Kabysrygtet er nu en intern side med link til nr. 6 november/december 2025.
+- Maritime links inkl. Mærsk og Søværnet ligger i fold-ud under Dokumenter.
+
+VIGTIGT:
+- PDF er linket fra den gamle hjemmeside, ikke fysisk inkluderet, da den ikke kunne hentes.
+- Gem en kopi før den gamle hjemmeside lukkes.
+- Administrator, tilmeldinger og mails er fortsat ikke sat i drift.
+- Upload index.html til repository-roden og behold eksisterende assets-mappe.
+- admin.html er medtaget uændret.
