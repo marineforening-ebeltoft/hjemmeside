@@ -1,14 +1,9 @@
-MARINEFORENINGEN V3.5 – LINKS OG KABYSRYGTET
+MARINEFORENINGEN V3.6
 
-Bevarer eksisterende layout.
+Links er nu et selvstændigt menupunkt på både PC og mobil.
+Maritime links er flyttet fra Dokumenter til Links, og listen er åben ved besøg.
+Øvrigt layout og funktionalitet er bevaret fra v3.5.
 
-Opdateret:
-- Kabysrygtet er nu en intern side med link til nr. 6 november/december 2025.
-- Maritime links inkl. Mærsk og Søværnet ligger i fold-ud under Dokumenter.
-
-VIGTIGT:
-- PDF er linket fra den gamle hjemmeside, ikke fysisk inkluderet, da den ikke kunne hentes.
-- Gem en kopi før den gamle hjemmeside lukkes.
-- Administrator, tilmeldinger og mails er fortsat ikke sat i drift.
-- Upload index.html til repository-roden og behold eksisterende assets-mappe.
-- admin.html er medtaget uændret.
+Upload indholdet af ZIP-filen til roden af eksisterende GitHub-repository.
+Admin og tilmeldinger er stadig demo/ikke aktiveret i produktion.
+Kabysrygtet 2025 PDF linker fortsat til den gamle hjemmeside.
