@@ -1,0 +1,9 @@
+Ebeltoft Marineforening v3.2
+
+Indhold: Diskret pop op med arrangementer og frivilligopgaver, tilpasset mobil, lukning med X/Escape, vises én gang pr. session, kan genåbnes via Aktuelt hos os. Marinestuen-rettelse fra v3.1 er bevaret.
+
+VIGTIGT: Tilmeldinger er IKKE aktiveret. Ingen database eller sikker deltagerliste er tilsluttet. Ingen Supabase er sat op.
+
+Upload IKKE ZIP-filen direkte til GitHub. Udpak først. PDF-arkivet med 44 filer er ikke inkluderet i denne lette pakke. Bevar den eksisterende kabysrygtet/pdf-mappe.
+
+Før du overskriver index.html: Sammenlign med den nuværende live-version, da ændringer foretaget efter v3.1 ellers kan gå tabt.
