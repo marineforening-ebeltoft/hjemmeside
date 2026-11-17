@@ -1,7 +1,21 @@
-Marineforeningen v3.3 – to fællesskabsaktiviteter i pop op-vinduet.
+EBELTOFT MARINEFORENING – OPDATERING v3.4 (17. november 2026)
 
-Pakken indeholder kun index.html, baseret på v3.2.
-Kontrollér først, at GitHub-versionen svarer til v3.2, før du erstatter index.html.
-Upload index.html i roden af repository marineforening-ebeltoft/hjemmeside.
-Ingen andre filer eller PDF-arkiver ændres.
-Ingen online tilmelding er tilføjet.
+INDEHOLDER:
+- index.html: Opdateret pop op med 2026/2027-datoer og priser; aktiviteter/Marinestuen rettet.
+- kabysrygtet/index.html: Årgangsarkiv opdateret med 2026.
+- kabysrygtet/oversigt.json: 45 numre i oversigten (44 tidligere + 1 nyt).
+- kabysrygtet/pdf/Kabysrygtet-2026-06-november-december.pdf: Nyt medlemsblad, nr. 6, november/december 2026.
+
+UPLOAD TIL GITHUB:
+1. Pak ZIP-filen ud på Windows (ikke upload ZIP-filen direkte).
+2. Sørg for at du arbejder i repository marineforening-ebeltoft/hjemmeside.
+3. Upload index.html i roden. Hvis der er nyere ændringer på GitHub, sammenlign først.
+4. Upload kabysrygtet/index.html og kabysrygtet/oversigt.json i mappen kabysrygtet.
+5. Upload PDF'en i kabysrygtet/pdf/.
+6. Kontrollér forsiden og Kabysrygtet-arkivet online efter GitHub Pages er opdateret.
+
+VIGTIGT:
+- Dette er kun opdateringen. De 44 tidligere PDF-filer skal stadig ligge på GitHub i kabysrygtet/pdf/ for at de gamle links virker.
+- Ingen backend, tilmeldinger eller Supabase er aktiveret.
+- Kalenderdatoer beregnes ud fra gentagelsesregler og kan afvige ved helligdage/ferie.
+- Hjemmesiden er ikke automatisk lagt online.
