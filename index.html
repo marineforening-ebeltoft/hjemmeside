@@ -613,19 +613,39 @@ document.addEventListener('click',e=>{const menu=document.getElementById('mobile
 })();
 </script>
 
+
+<style id="marine-invitation-v33">
+.marine-invite-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:18px 0 14px}
+.marine-invite-card{background:#f7f7f2;border:1px solid #d8c9a2;border-top:4px solid #b5954e;border-radius:12px;padding:17px 16px;text-align:left}
+.marine-invite-label{font-size:12px;letter-spacing:.035em;font-weight:750;color:#725c2b;margin-bottom:9px}
+.marine-invite-card h3{font-size:20px;line-height:1.22;color:#12344a;margin:0 0 9px}
+.marine-invite-card p{font-size:15px;line-height:1.5;color:#304956;margin:0}
+.marine-update-panel{width:min(690px,100%);max-height:calc(100dvh - 32px);overflow-y:auto}
+@media(max-width:580px){.marine-invite-grid{grid-template-columns:1fr;gap:10px}.marine-invite-card{padding:14px}.marine-invite-card h3{font-size:19px}}
+</style>
 <button id="marineUpdateTab" class="marine-update-tab" type="button" aria-haspopup="dialog" aria-controls="marineUpdateOverlay">Aktuelt hos os</button>
 <div id="marineUpdateOverlay" class="marine-update-overlay" aria-hidden="true">
  <div class="marine-update-panel" role="dialog" aria-modal="true" aria-labelledby="marineUpdateTitle" tabindex="-1">
   <button type="button" class="marine-update-close" id="marineUpdateClose" aria-label="Luk meddelelsen">×</button>
-  <span class="marine-update-kicker">Ebeltoft Marineforening</span>
-  <h2 id="marineUpdateTitle">Velkommen ombord</h2>
-  <p>Her finder du vores kommende arrangementer, frivilligopgaver og nyt fra foreningen.</p>
-  <p>Du kan se aktiviteterne med det samme. Online tilmelding åbnes først, når den sikre deltagerregistrering er klar.</p>
-  <div class="marine-update-actions">
-   <button type="button" data-marine-destination="arrangementer">Se arrangementer</button>
-   <button type="button" data-marine-destination="frivillige">Frivilligopgaver</button>
+  <span class="marine-update-kicker">Ebeltoft Marineforening · Fællesskab</span>
+  <h2 id="marineUpdateTitle">Kom indenfor i Marinestuen</h2>
+  <p>Der er plads til gode samtaler, nye bekendtskaber og hyggeligt samvær.</p>
+  <div class="marine-invite-grid">
+    <section class="marine-invite-card" aria-label="Tirsdag i Marinestuen">
+      <div class="marine-invite-label">Hver tirsdag · kl. 10.00–12.00</div>
+      <h3>Bliv en del af fællesskabet</h3>
+      <p>Deltag i hyggeligt samvær hver tirsdag fra kl. 10 til 12 i Marinestuen. Kig indenfor og vær med.</p>
+    </section>
+    <section class="marine-invite-card" aria-label="Veterantræf i Marinestuen">
+      <div class="marine-invite-label">Første mandag i hver måned</div>
+      <h3>Er du veteran?</h3>
+      <p>Mød op i Marinestuen til hyggeligt samvær, gode soldaterhistorier og fællesskab med andre veteraner.</p>
+    </section>
   </div>
-  <div class="marine-update-foot">Denne meddelelse vises højst én gang automatisk pr. browsersession.</div>
+  <div class="marine-update-actions">
+    <button type="button" id="marineInviteDismiss">Tak, jeg har set det</button>
+  </div>
+  <div class="marine-update-foot">Du er velkommen til at kigge forbi. Åbn invitationen igen via “Aktuelt hos os”.</div>
  </div>
 </div>
 <script>
@@ -634,10 +654,10 @@ document.addEventListener('click',e=>{const menu=document.getElementById('mobile
  let previousFocus=null;
  function show(){previousFocus=document.activeElement;overlay.classList.add('is-open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';close.focus()}
  function hide(){overlay.classList.remove('is-open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow='';if(previousFocus&&previousFocus.focus)previousFocus.focus()}
- tab.addEventListener('click',show);close.addEventListener('click',hide);overlay.addEventListener('click',e=>{if(e.target===overlay)hide()});
+ tab.addEventListener('click',show);close.addEventListener('click',hide);document.getElementById('marineInviteDismiss').addEventListener('click',hide);overlay.addEventListener('click',e=>{if(e.target===overlay)hide()});
  document.addEventListener('keydown',e=>{if(!overlay.classList.contains('is-open'))return;if(e.key==='Escape')hide();if(e.key==='Tab'){const items=[close,...overlay.querySelectorAll('.marine-update-actions button')];const i=items.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();items[items.length-1].focus()}else if(!e.shiftKey&&i===items.length-1){e.preventDefault();items[0].focus()}}});
  overlay.querySelectorAll('[data-marine-destination]').forEach(b=>b.addEventListener('click',()=>{const destination=b.dataset.marineDestination;hide();if(typeof go==='function')go(destination)}));
- try{if(!sessionStorage.getItem('marine-update-seen-v32')){sessionStorage.setItem('marine-update-seen-v32','1');setTimeout(()=>{if(!overlay.classList.contains('is-open')&&(location.hash===''||location.hash==='#forside'))show()},7500)}}catch(e){}
+ try{if(!sessionStorage.getItem('marine-update-seen-v33-invitation')){sessionStorage.setItem('marine-update-seen-v33-invitation','1');setTimeout(()=>{if(!overlay.classList.contains('is-open')&&(location.hash===''||location.hash==='#forside'))show()},7500)}}catch(e){}
 })();
 </script>
 </body></html>

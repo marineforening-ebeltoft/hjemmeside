@@ -1,0 +1,7 @@
+Marineforeningen v3.3 – to fællesskabsaktiviteter i pop op-vinduet.
+
+Pakken indeholder kun index.html, baseret på v3.2.
+Kontrollér først, at GitHub-versionen svarer til v3.2, før du erstatter index.html.
+Upload index.html i roden af repository marineforening-ebeltoft/hjemmeside.
+Ingen andre filer eller PDF-arkiver ændres.
+Ingen online tilmelding er tilføjet.
