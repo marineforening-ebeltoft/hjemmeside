@@ -1,0 +1,1 @@
+Version 3.5: Forsidekort med nyt Kabysrygtet. Upload index.html i repo-roden, assets/img/kabysrygtet-2026-06-cover.png og kabysrygtet/pdf/Kabysrygtet-2026-06-november-december.pdf til samme stier på GitHub. Arkivfilerne fra v3.4 bevares. OBS: overskriv ikke index.html, hvis GitHub har nyere ændringer.
