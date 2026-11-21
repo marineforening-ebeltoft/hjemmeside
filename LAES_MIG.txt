@@ -1,10 +1,10 @@
-Ebeltoft Marineforening v4.2
+Marineforeningen v5.0 – opdatering af eksisterende forside
 
-Denne opdatering aktiverer Facebook-ikonet i menuen og sidefoden.
+1. Tag backup af nuværende index.html i GitHub.
+2. Upload denne index.html til roden af repoet hjemmeside.
+3. Behold eksisterende assets/, kabysrygtet/ og alle PDF-filer.
+4. Test forsiden, menu, arrangementer og Kabysrygtet på mobil/iPad/pc.
 
-1. Pak ZIP-filen ud.
-2. Upload index.html til roden af marineforening-ebeltoft/hjemmeside på GitHub.
-3. Kontrollér Facebook-ikonet i sidemenu og sidefod.
+Ændringer: bevaret Ken Burns med fem fotos og buet afslutning; velkomsttekst til gæster; genvej til frivillige i hero; mobiljusteringer og hensyn til reduceret bevægelse.
 
-Instagram og YouTube forbliver ikke-klikbare, indtil deres adresser er kendt.
-Ingen PDF-filer eller billeder skal uploades igen.
+Denne pakke indeholder kun index.html; billedfiler og PDFer skal fortsat ligge på GitHub. Ingen ændringer er uploadet automatisk.
