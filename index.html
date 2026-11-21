@@ -456,7 +456,20 @@ body.marine-drawer-open{overflow:hidden}
 .marine-thursday-reminder{background:#fff4d9;border:1px solid #b79552;border-left:5px solid #b79552;border-radius:9px;padding:13px 16px;margin:0 0 20px;color:#243f4c}
 .marine-thursday-reminder strong{display:block}.marine-thursday-reminder button{background:#0b344b;color:white;border:0;border-radius:8px;padding:10px 13px;margin-top:8px;font-weight:700}
 </style>
-</head><body>
+<style>
+/* v5.1: tydeligere Ken Burns-fotos uden ændring af originalernes ansigter */
+.hero .slide img{filter:contrast(1.045) saturate(1.035);image-rendering:auto}
+.hero:after{background:linear-gradient(90deg,rgba(2,24,39,.69) 0%,rgba(2,24,39,.39) 43%,rgba(2,24,39,.04) 100%),linear-gradient(0deg,rgba(1,20,32,.38),transparent 55%)}
+.marine-community{padding:58px 0 66px;background:#fff}
+.marine-community-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:27px}
+.marine-community-card{border:1px solid #dedfd9;border-top:3px solid var(--gold);border-radius:10px;padding:24px;background:#f9f8f4;display:flex;flex-direction:column;align-items:flex-start}
+.marine-community-card h3{font-family:Georgia,serif;font-size:23px;color:var(--navy);margin:12px 0}
+.marine-community-card p{color:#52646d;flex:1;margin:0 0 22px;line-height:1.6}
+.marine-community-icon{font-size:12px;font-weight:800;letter-spacing:.13em;color:#957039}
+.marine-community-card .btn{border-radius:7px}
+@media(max-width:850px){.marine-community-grid{grid-template-columns:1fr}.marine-community{padding:44px 0}.marine-community-card{padding:21px}}
+@media(max-width:760px){.hero:after{background:linear-gradient(90deg,rgba(2,26,42,.73),rgba(2,26,42,.35) 78%,rgba(2,26,42,.22)),linear-gradient(0deg,rgba(2,26,42,.34),transparent 55%)}}
+</style></head><body>
 
 <!-- Åbningsintro: vises én gang pr. browserfane, kan springes over -->
 <div id="marineIntro" class="marine-splash" role="dialog" aria-modal="true" aria-labelledby="marineIntroTitle" aria-describedby="marineIntroSubtitle" hidden>
@@ -489,6 +502,33 @@ body.marine-drawer-open{overflow:hidden}
 <article class="pathway"><img src="assets/img/forside-kort-02.png" alt="Medlemmer samlet om et måltid i Marinestuen" loading="lazy"><div class="pathway-body"><span class="pathway-number">02 / GIV EN HÅND</span><h3>Bliv frivillig</h3><p>Vær med til at skabe gode oplevelser og hjælpe ved foreningens aktiviteter.</p><button class="btn" onclick="go('frivillige')">Se frivillige opgaver →</button></div></article>
 <article class="pathway"><img src="assets/img/forside-kort-03.png" alt="Maritimt optog med Dannebrog og faner" loading="lazy"><div class="pathway-body"><span class="pathway-number">03 / DET SKER HOS OS</span><h3>Arrangementer</h3><p>Oplev traditionerne, sammenholdet og de kommende arrangementer.</p><button class="btn" onclick="go('arrangementer')">Se arrangementer →</button></div></article>
 </div></div></section>
+<section class="marine-community" aria-labelledby="communityTitle">
+  <div class="wrap">
+    <div class="kicker">Velkommen i fællesskabet</div>
+    <h2 id="communityTitle">LIVET I MARINEFORENINGEN</h2>
+    <p class="section-intro">Her er plads til både nye gæster, medlemmer og veteraner. Kom forbi, mød menneskerne og oplev traditionerne.</p>
+    <div class="marine-community-grid">
+      <article class="marine-community-card">
+        <div class="marine-community-icon" aria-hidden="true">01</div>
+        <h3>Velkommen ombord</h3>
+        <p>Du behøver ikke være medlem for at kigge indenfor og høre om fællesskabet. Vi mødes i Marinestuen på Stockflethsvej 7 i Ebeltoft.</p>
+        <button class="btn light" type="button" onclick="go('medlem')">Læs om medlemskab →</button>
+      </article>
+      <article class="marine-community-card">
+        <div class="marine-community-icon" aria-hidden="true">02</div>
+        <h3>Livet i Marinestuen</h3>
+        <p>Tirsdagstræf kl. 10–12 med morgenmad og kaffe til 30 kr. Lørdagsfrokost kl. 11.30 med tilmelding senest torsdag.</p>
+        <button class="btn light" type="button" onclick="go('marinestuen')">Oplev Marinestuen →</button>
+      </article>
+      <article class="marine-community-card">
+        <div class="marine-community-icon" aria-hidden="true">03</div>
+        <h3>Veteraner og traditioner</h3>
+        <p>Veterancafé den første mandag i måneden fra kl. 09.30 med gratis morgenmad og kaffe. Her er plads til samtaler, samvær og soldaterhistorier.</p>
+        <button class="btn light" type="button" onclick="go('aktiviteter')">Se vores aktiviteter →</button>
+      </article>
+    </div>
+  </div>
+</section>
 <section class="welcome-block"><div class="wrap welcome-inner"><div class="kicker">Velkommen</div><h2 id="welcomeTitle">Velkommen til Ebeltoft Marineforening</h2><p id="welcomeText"></p><div class="actions"><button class="btn" onclick="go('aktiviteter')">Vores aktiviteter →</button><button class="btn light" onclick="go('frivillige')">Bliv frivillig →</button></div></div></section>
 <section class="section white"><div class="wrap"><div class="section-head"><div><div class="kicker">Kommende</div><h2>Næste i Marineforeningen</h2></div><button class="text-link" onclick="go('arrangementer')">Se alle arrangementer →</button></div><div class="grid" id="homeEvents"></div></div></section>
 <section class="section"><div class="wrap story"><img src="assets/img/03-sluppen.jpg" alt="Medlemmer sammen på vandet"><div><div class="kicker">Fællesskab på vand og land</div><h2>Traditionerne lever gennem mennesker</h2><p>Vi samler mennesker med interesse for Søværnet, søfarten og det maritime liv. Her mødes vi om sejlads, Slupkoret, aktiviteter og gode oplevelser i Marinestuen.</p><button class="btn" onclick="go('aktiviteter')">Udforsk aktiviteter →</button></div></div></section>

@@ -1,10 +1,9 @@
-Marineforeningen v5.0 – opdatering af eksisterende forside
+Marineforeningen v5.1 – samlet hovedversion baseret på v5.0.
 
-1. Tag backup af nuværende index.html i GitHub.
-2. Upload denne index.html til roden af repoet hjemmeside.
-3. Behold eksisterende assets/, kabysrygtet/ og alle PDF-filer.
-4. Test forsiden, menu, arrangementer og Kabysrygtet på mobil/iPad/pc.
+Indeholder: uændret Ken Burns-billedserie med lettere kontrast og mindre mørktoning; tre nye informationskort: Velkommen ombord, Livet i Marinestuen, Veteraner og traditioner.
 
-Ændringer: bevaret Ken Burns med fem fotos og buet afslutning; velkomsttekst til gæster; genvej til frivillige i hero; mobiljusteringer og hensyn til reduceret bevægelse.
+Ingen originale billeder eller ansigter er redigeret. For ægte opskarpning skal de originale 5 JPG-filer bruges.
 
-Denne pakke indeholder kun index.html; billedfiler og PDFer skal fortsat ligge på GitHub. Ingen ændringer er uploadet automatisk.
+Upload kun index.html i repoets rod, efter at eventuelle nyere GitHub-ændringer er sammenlignet. Eksisterende billeder og Kabysrygtet-PDF-filer skal bevares.
+
+Ikke publiceret på GitHub; ikke testet på fysisk iPad/iPhone.
