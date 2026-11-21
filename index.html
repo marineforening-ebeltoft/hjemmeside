@@ -441,7 +441,15 @@ body.marine-drawer-open{overflow:hidden}
 .marine-menu-backdrop{z-index:1000!important}.header{z-index:40}.mobile-menu [data-nav]{opacity:0;transform:translate(24px,-8px);transition:opacity .28s ease,transform .28s ease;transition-delay:0ms}.mobile-menu.open [data-nav]{opacity:1;transform:translate(0,0);transition-delay:calc(110ms + var(--order,0) * 68ms)}
 @media(max-width:760px){.marine-next-wrap{grid-template-columns:1fr;padding:19px;gap:14px}.marine-next-content{border-left:0;border-top:2px solid #b99555;padding:15px 0 0}.marine-program-grid{grid-template-columns:1fr}.marine-program-card{padding:18px}}
 @media(prefers-reduced-motion:reduce){.mobile-menu [data-nav]{transition:none!important}}
-</style></head><body>
+</style><style id="marine-lunch-v43">
+.marine-more-events{margin-top:22px;border:1px solid #d6cbb6;border-radius:13px;background:#fff;padding:0 18px 18px}
+.marine-more-events summary{cursor:pointer;list-style:none;padding:18px 8px;color:#0b344b;font-weight:800;font-size:17px}
+.marine-more-events summary::-webkit-details-marker{display:none}
+.marine-more-events[open] summary{border-bottom:1px solid #e4ded2;margin-bottom:20px}
+.marine-thursday-reminder{background:#fff4d9;border:1px solid #b79552;border-left:5px solid #b79552;border-radius:9px;padding:13px 16px;margin:0 0 20px;color:#243f4c}
+.marine-thursday-reminder strong{display:block}.marine-thursday-reminder button{background:#0b344b;color:white;border:0;border-radius:8px;padding:10px 13px;margin-top:8px;font-weight:700}
+</style>
+</head><body>
 
 <!-- Åbningsintro: vises én gang pr. browserfane, kan springes over -->
 <div id="marineIntro" class="marine-splash" role="dialog" aria-modal="true" aria-labelledby="marineIntroTitle" aria-describedby="marineIntroSubtitle" hidden>
@@ -481,7 +489,7 @@ body.marine-drawer-open{overflow:hidden}
 
 </section>
 <div id="subpage" class="page"><div class="page-title"><div class="wrap"><div class="kicker" id="pageKicker">MARINEFORENINGEN</div><h1 id="pageHeading"></h1><p id="pageIntro"></p></div></div><div class="section"><div class="wrap" id="pageBody"></div></div></div>
-</main><footer class="footer"><div class="wrap footer-inner"><div class="footer-about"><img class="footer-logo" src="assets/img/marineforening-logo.png" alt="Marineforeningens officielle emblem" width="74" height="74"><strong>Ebeltoft Marineforening</strong><p>Et maritimt fællesskab siden 1917.</p><p>Stockflethsvej 7 · Ebeltoft</p><div id="marineFooterSocial" class="footer-social"></div></div><div class="footer-links"><span class="footer-title">UDFORSK</span><button onclick="go('arrangementer')">Arrangementer</button><button onclick="go('aktiviteter')">Aktiviteter</button><button onclick="go('frivillige')">Bliv frivillig</button><button onclick="go('historie')">Historisk arkiv</button></div><div class="footer-links"><span class="footer-title">FORENINGEN</span><button onclick="go('bestyrelse')">Bestyrelsen</button><button onclick="go('marinestuen')">Marinestuen</button><button onclick="go('medlem')">Bliv medlem</button></div></div><div class="wrap footer-bottom"><span>© Ebeltoft Marineforening · Design v4.2</span><button onclick="go('forside')">Til forsiden ↑</button></div></footer>
+</main><footer class="footer"><div class="wrap footer-inner"><div class="footer-about"><img class="footer-logo" src="assets/img/marineforening-logo.png" alt="Marineforeningens officielle emblem" width="74" height="74"><strong>Ebeltoft Marineforening</strong><p>Et maritimt fællesskab siden 1917.</p><p>Stockflethsvej 7 · Ebeltoft</p><div id="marineFooterSocial" class="footer-social"></div></div><div class="footer-links"><span class="footer-title">UDFORSK</span><button onclick="go('arrangementer')">Arrangementer</button><button onclick="go('aktiviteter')">Aktiviteter</button><button onclick="go('frivillige')">Bliv frivillig</button><button onclick="go('historie')">Historisk arkiv</button></div><div class="footer-links"><span class="footer-title">FORENINGEN</span><button onclick="go('bestyrelse')">Bestyrelsen</button><button onclick="go('marinestuen')">Marinestuen</button><button onclick="go('medlem')">Bliv medlem</button></div></div><div class="wrap footer-bottom"><span>© Ebeltoft Marineforening · Design v4.3</span><button onclick="go('forside')">Til forsiden ↑</button></div></footer>
 <aside class="ticker" id="ticker" aria-label="Aktuelle arrangementer og frivillige opgaver"><div class="wrap ticker-inner"><span class="ticker-label">AKTUELT</span><div class="ticker-window" aria-label="Rullende nyheder og aktiviteter"><div class="ticker-track" id="tickerTrack"></div></div></div></aside>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><button class="close" onclick="closeModal()" aria-label="Luk">×</button><h2 id="modalTitle"></h2><div id="modalContent"></div></div></div>
 <script>
@@ -536,25 +544,47 @@ function marineRecurring(){
  for(let i=0;i<16&&added<2;i++){let yy=y+Math.floor((m+i)/12),mm=(m+i)%12,day=marineFirstMonday(yy,mm);if(day>=today&&day<='2027-12-31'){out.push({id:'veteran-'+day,date:day,title:'Veterancafé',place:'Marinestuen',time:'Fra kl. 09.30',signup:false,recurring:true,description:'Første mandag i hver måned. Gratis morgenmad og kaffe, hyggeligt samvær og gode soldaterhistorier.'});added++}}
  return out;
 }
-function marineUpcomingEvents(){let today=marineLocalDate();return [...MARINE_PROGRAM,...marineRecurring()].filter(e=>(e.endDate||e.date)>=today).sort((a,b)=>a.date.localeCompare(b.date)||a.title.localeCompare(b.title,'da'))}
+function marineSaturdayLunch(){
+ const today=marineLocalDate(),d=new Date(today+'T12:00:00'),out=[];
+ d.setDate(d.getDate()+(6-d.getDay()+7)%7);
+ for(let i=0;i<16;i++){
+  const date=marineLocalDate(d),first=d.getDate()<=7;
+  out.push({id:'loerdagsfrokost-'+date,date,title:'Lørdagsfrokost'+(first?' · udvidet menu':''),place:'Marinestuen',time:'Kl. 11.30',signup:true,lunch:true,firstSaturday:first,description:'Frokost i Marinestuen. '+(first?'Første lørdag i måneden er der udvidet menu. ':'')+'Menu udsendes på e-mail. Tilmeld dig senest torsdag via e-mail eller listen i Marinestuen.'});
+  d.setDate(d.getDate()+7);
+ }
+ return out;
+}
+function marineLunchSignup(e){
+ const subject='Tilmelding til lørdagsfrokost '+marineEventLabel(e);
+ const body='Hej Ebeltoft Marineforening,\n\nJeg vil gerne tilmelde mig lørdagsfrokost '+marineEventLabel(e)+' kl. 11.30.\n\nNavn: [skriv navn]\nAntal deltagere: [skriv antal]\n\nVenlig hilsen';
+ window.location.href='mailto:'+MARINE_EVENT_MAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+}
+function marineThursdayReminder(){
+ const now=new Date(),day=now.getDay();if(day!==4)return '';
+ const lunch=marineSaturdayLunch()[0];
+ return '<div class="marine-thursday-reminder" role="status"><strong>Husk at tilmelde dig i dag torsdag!</strong><span> Lørdagsfrokost kl. 11.30 · senest i dag via e-mail eller listen i Marinestuen.</span> <button type="button" onclick="marineLunchSignup(marineSaturdayLunch()[0])">Tilmeld til frokost →</button></div>';
+}
+function marineUpcomingEvents(){let today=marineLocalDate();return [...MARINE_PROGRAM,...marineRecurring(),...marineSaturdayLunch()].filter(e=>(e.endDate||e.date)>=today).sort((a,b)=>a.date.localeCompare(b.date)||a.title.localeCompare(b.title,'da'))}
 function marineUpcomingTasks(){let today=marineLocalDate();return MARINE_VOLUNTEER.filter(e=>e.date>=today).sort((a,b)=>a.date.localeCompare(b.date))}
 function marineEventLabel(e){return e.endDate?fmtDate(e.date)+' – '+fmtDate(e.endDate):fmtDate(e.date)}
 function marineSignupLink(id,kind){
- const list=kind==='task'?MARINE_VOLUNTEER:MARINE_PROGRAM;const e=list.find(x=>x.id===id);if(!e)return;
+ const list=kind==='task'?MARINE_VOLUNTEER:[...MARINE_PROGRAM,...marineSaturdayLunch()];const e=list.find(x=>x.id===id);if(e&&e.lunch){marineLunchSignup(e);return;}if(!e)return;
  const subject=(kind==='task'?'Frivillig hjælp: ':'Tilmelding: ')+e.title+' ('+marineEventLabel(e)+')';
  const body='Hej Ebeltoft Marineforening,\n\nJeg vil gerne '+(kind==='task'?'hjælpe som frivillig ved ':'tilmeldes ')+e.title+'.\nDato: '+marineEventLabel(e)+'\n\nNavn: [skriv navn]\nE-mail: [skriv e-mail]'+(kind==='task'?'':'\nAntal deltagere: [skriv antal]')+'\n\nVenlig hilsen';
  window.location.href='mailto:'+MARINE_EVENT_MAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
 }
+function marineEventCards(items,isEvent){return items.map(e=>{
+ const badge=!isEvent?'Eksempelopgave':e.infoPending?'Nærmere information følger':e.lunch?'Tilmelding senest torsdag':e.signup?'Tilmelding':'Mød op · ingen tilmelding';
+ const action=!isEvent?'<button class="marine-action" type="button" onclick="marineSignupLink(\''+e.id+'\',\'task\')">Jeg vil gerne hjælpe →</button>':e.lunch?'<button class="marine-action" type="button" onclick="marineSignupLink(\''+e.id+'\',\'event\')">Tilmeld til frokost →</button>':e.signup?'<button class="marine-action" type="button" onclick="marineSignupLink(\''+e.id+'\',\'event\')">Tilmeld dig →</button>':e.infoPending?'<span class="marine-no-signup">Program følger</span>':'<span class="marine-no-signup">Du skal bare møde op</span>';
+ return '<article class="marine-program-card"><div class="marine-program-date">'+esc(marineEventLabel(e))+'</div><div class="marine-program-tag">'+esc(badge)+'</div><h3>'+esc(e.title)+'</h3><p>'+esc(e.description)+'</p><div class="marine-program-detail">⌖ '+esc(e.place)+' · '+esc(e.time||'Tidspunkt følger')+'</div><div class="marine-program-foot">'+action+'</div></article>';
+ }).join('')}
 function marineRenderEntries(kind){
  const isEvent=kind==='events',items=isEvent?marineUpcomingEvents():marineUpcomingTasks();
- const info=isEvent?'<p class="marine-program-intro">Kun udvalgte arrangementer vises her. Datoerne kommer fra Kabysrygtets aktivitetsoversigt; tidspunkter og tilmelding kan blive ændret af bestyrelsen. Tirsdagstræf og veterancafé kræver ikke tilmelding.</p>':'<p class="marine-program-intro"><strong>Foreløbige frivilligopgaver:</strong> Disse opgaver er eksempler og skal godkendes af foreningen. Du kan sende en uforpligtende henvendelse.</p>';
- return info+'<div class="marine-program-grid">'+items.map(e=>{
- const badge=!isEvent?'Eksempelopgave':e.infoPending?'Nærmere information følger':e.signup?'Tilmelding':'Mød op · ingen tilmelding';
- const action=!isEvent?'<button class="marine-action" type="button" onclick="marineSignupLink(\''+e.id+'\',\'task\')">Jeg vil gerne hjælpe →</button>':e.signup?'<button class="marine-action" type="button" onclick="marineSignupLink(\''+e.id+'\',\'event\')">Tilmeld dig →</button>':e.infoPending?'<span class="marine-no-signup">Program følger</span>':'<span class="marine-no-signup">Du skal bare møde op</span>';
- return '<article class="marine-program-card"><div class="marine-program-date">'+esc(marineEventLabel(e))+'</div><div class="marine-program-tag">'+esc(badge)+'</div><h3>'+esc(e.title)+'</h3><p>'+esc(e.description)+'</p><div class="marine-program-detail">⌖ '+esc(e.place)+' · '+esc(e.time||'Tidspunkt aftales')+'</div><div class="marine-program-foot">'+action+'</div></article>';
- }).join('')+'</div>'+(items.length?'':'<p class="empty">Der er ingen kommende opslag i den nuværende oversigt.</p>')+'<p class="small-note">Tilmelding via e-mail: Din e-mailapp åbnes med en kladde. Mailen sendes først, når du selv trykker Send. Tilmeldingen er først bekræftet, når foreningen svarer. Der gemmes ingen personoplysninger på hjemmesiden.</p>';
+ const info=isEvent?'<p class="marine-program-intro">De næste seks arrangementer vises her. Tryk på knappen for at se resten. Lørdagsfrokost kræver tilmelding senest torsdag. Tirsdagstræf og veterancafé kræver ikke tilmelding.</p>':'<p class="marine-program-intro"><strong>Foreløbige frivilligopgaver:</strong> Disse opgaver er eksempler og skal godkendes af foreningen.</p>';
+ const visible=isEvent?items.slice(0,6):items,more=isEvent?items.slice(6):[];
+ return (isEvent?marineThursdayReminder():'')+info+'<div class="marine-program-grid">'+marineEventCards(visible,isEvent)+'</div>'+(more.length?'<details class="marine-more-events"><summary>Vis alle kommende arrangementer ('+more.length+' flere) ↓</summary><div class="marine-program-grid">'+marineEventCards(more,true)+'</div></details>':'')+(items.length?'':'<p class="empty">Der er ingen kommende opslag.</p>')+'<p class="small-note">Tilmelding via e-mail eller, for lørdagsfrokost, listen i Marinestuen. E-mailprogrammet åbner en kladde, som du selv skal sende. En tilmelding er først bekræftet, når foreningen svarer.</p>';
 }
-function marineRenderNext(){const e=marineUpcomingEvents()[0],target=document.getElementById('marineNextEvent');if(!target)return;if(!e){target.innerHTML='<p>Nye arrangementer bliver offentliggjort her.</p>';return}target.innerHTML='<div class="marine-next-meta">'+esc(marineEventLabel(e))+' · '+esc(e.time)+'</div><h3>'+esc(e.title)+'</h3><p>'+esc(e.description)+'</p><button type="button" class="marine-action" onclick="go(\'arrangementer\')">Se arrangementsoversigten →</button>'}
+function marineRenderNext(){const e=marineUpcomingEvents()[0],target=document.getElementById('marineNextEvent');if(!target)return;if(!e){target.innerHTML='<p>Nye arrangementer bliver offentliggjort her.</p>';return}target.innerHTML=marineThursdayReminder()+'<div class="marine-next-meta">'+esc(marineEventLabel(e))+' · '+esc(e.time)+'</div><h3>'+esc(e.title)+'</h3><p>'+esc(e.description)+'</p><button type="button" class="marine-action" onclick="go(\'arrangementer\')">Se arrangementsoversigten →</button>'}
 
 // Engangsopdatering af foreningens faste aktivitetsbeskrivelser (v1.6).
 // Bevarer øvrige demooplysninger og eventuelle ekstra aktiviteter i browseren.

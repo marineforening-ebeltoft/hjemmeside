@@ -1,3 +1,7 @@
-Rettelse: Fjernet blaa sidebjaelker i Marinestuen-billedshow.
-Pak ud og upload KUN index.html til roden af GitHub-repositoriet marineforening-ebeltoft/hjemmeside.
-Vigtigt: Erstat kun hvis din online index.html stadig svarer til version 3.1; ellers skal aendringen flettes ind i den nyere fil.
+Marineforeningen v4.3
+
+Upload index.html til hovedmappen i marineforening-ebeltoft/hjemmeside på GitHub.
+
+Ændringer: lørdagsfrokost hver lørdag kl. 11.30; første lørdag udvidet menu; tilmelding senest torsdag; torsdagspåmindelse på hjemmesiden; seks synlige arrangementer og resten under fold-ud. Facebook bevares.
+
+Ingen automatisk e-mailpåmindelse sendes. Brugeren skal selv sende tilmeldingsmailen.
