@@ -1,21 +1,29 @@
-EBELTOFT MARINEFORENING – OPDATERING v3.4 (17. november 2026)
+EBELTOFT MARINEFORENING v3.9 – ARRANGEMENTER OG MENU
 
-INDEHOLDER:
-- index.html: Opdateret pop op med 2026/2027-datoer og priser; aktiviteter/Marinestuen rettet.
-- kabysrygtet/index.html: Årgangsarkiv opdateret med 2026.
-- kabysrygtet/oversigt.json: 45 numre i oversigten (44 tidligere + 1 nyt).
-- kabysrygtet/pdf/Kabysrygtet-2026-06-november-december.pdf: Nyt medlemsblad, nr. 6, november/december 2026.
+INSTALLATION
+1. Pak ZIP-filen ud.
+2. Gennemgå datoer og tilmeldings-e-mail med bestyrelsen.
+3. På GitHub: marineforening-ebeltoft/hjemmeside, udskift kun index.html i hovedmappen.
+4. Afprøv menuknap på pc, iPad og mobil. Test arrangementsoversigten og e-mailtilmeldinger.
+5. Ingen PDF-filer eller billeder skal uploades igen.
 
-UPLOAD TIL GITHUB:
-1. Pak ZIP-filen ud på Windows (ikke upload ZIP-filen direkte).
-2. Sørg for at du arbejder i repository marineforening-ebeltoft/hjemmeside.
-3. Upload index.html i roden. Hvis der er nyere ændringer på GitHub, sammenlign først.
-4. Upload kabysrygtet/index.html og kabysrygtet/oversigt.json i mappen kabysrygtet.
-5. Upload PDF'en i kabysrygtet/pdf/.
-6. Kontrollér forsiden og Kabysrygtet-arkivet online efter GitHub Pages er opdateret.
+INDHOLD
+- Udvalgte arrangementer fra Kabysrygtets kalender for 2026 og 2027.
+- Tirsdagstræf og veterancafé uden tilmelding; næste dato beregnes automatisk.
+- Tilmeldingsarrangementer har knap til e-mailanmodning, IKKE central tilmeldingsdatabase.
+- Landskyttestævnet vises med nærmere information følger.
+- Frivilligopgaver er udtrykkeligt fiktive eksempler.
+- Afholdte arrangementer forsvinder fra den offentlige oversigt dagen efter sidste arrangementsdag.
+- Næste arrangement vises på forsiden.
+- Menuen åbner fra højre med menupunkter, der kommer ned ét efter ét.
 
-VIGTIGT:
-- Dette er kun opdateringen. De 44 tidligere PDF-filer skal stadig ligge på GitHub i kabysrygtet/pdf/ for at de gamle links virker.
-- Ingen backend, tilmeldinger eller Supabase er aktiveret.
-- Kalenderdatoer beregnes ud fra gentagelsesregler og kan afvige ved helligdage/ferie.
-- Hjemmesiden er ikke automatisk lagt online.
+VIGTIGT OM TILMELDING
+Tilmeldinger er endnu IKKE automatisk registreret, og der udsendes ingen automatisk bekræftelse.
+Knappen åbner en kladde i brugerens e-mailprogram. Brugeren skal selv sende den,
+og foreningen skal bekræfte deltagelse manuelt.
+Kontrollér e-mailadressen marineforeningen-ebeltoft@mail.dk inden offentliggørelse.
+Brevo eller anden sikker registrering kan kobles på senere. Ingen Supabase er anvendt.
+
+TEST
+HTML er kontrolleret og indlejret JavaScript syntakskontrolleret.
+Fuld browserafprøvning er ikke mulig i dette miljø. Hjemmesiden er IKKE lagt online.
