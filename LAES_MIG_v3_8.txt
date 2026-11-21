@@ -1,0 +1,23 @@
+EBELTOFT MARINEFORENING – VERSION 3.8
+
+Opdateringer:
+- Aktuelt vejr for Ebeltoft i diskret bjælke øverst. Kilde: Open-Meteo. Opdateres cirka hvert 15. minut. Kræver internet.
+- Sidemenu der glider ind fra højre på både mobil og desktop, med kryds, baggrund og Escape-lukning.
+- Små ikoner for Facebook, Instagram og YouTube i menu og sidefod. IKONERNE ER IKKE KLIKBARE, indtil officielle profil-URL'er indsættes.
+- Kabysrygtet-læsesiden med tilbageknap fra v3.7 er bevaret.
+- Ingen ændringer i PDF-arkivet, tilmeldingsdata eller popup-aktiviteter.
+
+UPLOAD TIL GITHUB
+1. Pak ZIP-filen ud.
+2. Åbn https://github.com/marineforening-ebeltoft/hjemmeside
+3. Upload index.html til repository-roden.
+4. Upload kabysrygtet/index.html og kabysrygtet/laes.html til mappen kabysrygtet/ hvis v3.7 ikke allerede er lagt online.
+5. Bevar eksisterende assets/ og kabysrygtet/pdf/ – upload ikke de 44 PDF'er igen.
+6. Test vejr, menu og PDF-tilbageknap på mobil.
+
+VIGTIGT: Pakken er baseret på v3.7, som endnu ikke var offentliggjort, da denne opdatering blev lavet. Hvis der er nyere ændringer i GitHub-index.html, sammenlign først før overskrivning.
+
+SOCIALE LINKS
+I index.html søges efter MARINE_SOCIAL_URLS. Sæt de officielle adresser i facebook, instagram og youtube. Ikonerne bliver automatisk klikbare, når adresserne er indsat.
+
+STATUS: Filer klar til upload. GitHub er ikke ændret automatisk.

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#092d42">
+<title>Læs Kabysrygtet · Ebeltoft Marineforening</title>
+<link rel="icon" href="../favicon.png">
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#16334a;background:#eef2f5}
+.top{position:sticky;top:0;z-index:5;background:#092d42;color:#fff;box-shadow:0 2px 12px #0002}
+.topinner{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 16px}
+.back{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#092d42;padding:11px 15px;border-radius:9px;font-weight:750;text-decoration:none;min-height:44px}
+.back:hover,.back:focus-visible{background:#f6e9bb;outline:2px solid #d8b56b}
+.tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tools a{color:#fff;border:1px solid #bd9d5e;padding:10px 12px;border-radius:8px;text-decoration:none;font-size:14px;min-height:44px;display:inline-flex;align-items:center}
+.tools a:hover,.tools a:focus-visible{background:#28495d}
+.title{max-width:1400px;margin:0 auto;padding:13px 16px;font-weight:650}
+.frame{display:block;width:min(100%,1400px);margin:0 auto;border:0;background:white;height:calc(100dvh - 145px);min-height:500px}
+.note{max-width:1400px;margin:0 auto;padding:12px 16px;font-size:14px}.note a{color:#074c7c}
+@media(max-width:600px){.topinner{padding:8px}.back{padding:10px 12px}.tools a{padding:10px}.title{padding:9px 12px;font-size:14px}.frame{height:calc(100dvh - 145px);min-height:430px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="topinner">
+<a id="back" class="back" href="../index.html">← Tilbage til Marineforeningen</a>
+<nav class="tools" aria-label="PDF-handlinger">
+<a id="download" href="#" download>↓ Hent PDF</a>
+<a id="open" href="#" target="_blank" rel="noopener">Åbn PDF separat ↗</a>
+</nav></div></header>
+<main>
+<div id="title" class="title">Kabysrygtet</div>
+<iframe id="reader" class="frame" title="Læs Kabysrygtet som PDF" loading="eager"></iframe>
+<p class="note">Kan du ikke se bladet på din telefon eller tablet? Brug <a id="fallback" href="#" target="_blank" rel="noopener">Åbn PDF separat</a>. Du kan altid vende tilbage via knappen øverst.</p>
+</main>
+<script>
+(function(){
+  const p=new URLSearchParams(location.search);
+  const file=p.get('fil')||'';
+  const valid=/^[a-zA-Z0-9._-]+\.pdf$/i.test(file)&&!file.includes('..');
+  const back=document.getElementById('back');
+  if(p.get('tilbage')==='arkiv'){back.href='./';back.textContent='← Tilbage til Kabysrygtet-arkivet';}
+  if(!valid){document.getElementById('title').textContent='Ugyldigt PDF-link';document.getElementById('reader').remove();document.querySelector('.tools').remove();document.querySelector('.note').remove();return;}
+  const url='pdf/'+encodeURIComponent(file);
+  document.getElementById('reader').src=url;
+  document.getElementById('download').href=url;
+  document.getElementById('open').href=url;
+  document.getElementById('fallback').href=url;
+  if(file==='Kabysrygtet-2026-06-november-december.pdf'){document.getElementById('title').textContent='Kabysrygtet nr. 6 · November / december 2026';}
+})();
+</script>
+</body>
+</html>
