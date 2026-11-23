@@ -1,7 +1,6 @@
-Marineforeningen v4.3
-
-Upload index.html til hovedmappen i marineforening-ebeltoft/hjemmeside på GitHub.
-
-Ændringer: lørdagsfrokost hver lørdag kl. 11.30; første lørdag udvidet menu; tilmelding senest torsdag; torsdagspåmindelse på hjemmesiden; seks synlige arrangementer og resten under fold-ud. Facebook bevares.
-
-Ingen automatisk e-mailpåmindelse sendes. Brugeren skal selv sende tilmeldingsmailen.
+Marineforeningen v5.3: Én samlet HTML-hovedversion baseret på v5.2.
+Ny lille DEMO-knap: Se hvordan du tilmelder dig.
+Demoen har 3 trin og gemmer eller sender ingen data.
+GitHub: Pak ZIP ud og erstat KUN index.html i repoets rod.
+Behold alle eksisterende billeder, Kabysrygtet-PDF og øvrige filer.
+Ingen ændringer er lagt på GitHub.
