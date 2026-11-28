@@ -1,0 +1,1 @@
+v6.0 – seks nye originale billeder. Udpak og upload index.html samt assets/img/ med de nye filer. Behold eksisterende PDF-filer og øvrige mapper. Ken Burns-forsiden er uændret. Brevo er ikke aktiveret.

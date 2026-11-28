@@ -1,19 +1,16 @@
-EBELTOFT MARINEFORENING – DESIGNOPDATERING V3.1
+MARINEFORENINGEN v6.1 – TESTPAKKE, IKKE PRODUKTION
 
-Ændringer:
-- Officielt Marineforenings-emblem i topmenu, intro, footer og favicon.
-- En lav, buet afslutning under forsidens maritime billedserie.
-- Marineblå/hvid/messing; ingen ændring af navigation eller eksisterende funktioner.
-- Kabysrygtet-menuen og arkivets oversigt er bevaret.
+website/ er v6.0 med online-tilmeldingsforbindelse. Upload kun indholdet af website/ til GitHub, aldrig apps-script/ eller nøgler. Behold eksisterende PDF'er. Standard er fortsat e-mailtilmelding.
 
-Upload til https://github.com/marineforening-ebeltoft/hjemmeside
-1. Udpak ZIP-filen på computeren.
-2. Upload index.html til repositorys HOVEDMAPPE (overskriv den gamle index.html).
-3. Upload de to filer marineforening-logo.png og marineforening-favicon.png
-   til assets/img/ i samme repository.
-4. Hvis de øvrige billeder mangler på GitHub, ligger de også i assets/img/ her.
-5. Test forsiden på både mobil og computer, og genindlæs siden.
+Opsætning hos foreningen:
+1. Opret et privat Google-regneark i foreningens egen konto. Del kun med autoriserede administratorer. Udvidelser > Apps Script. Kopiér Code.gs og opret HTML-filen Form med Form.html. Gem. Vælg Europe/Copenhagen som projektets tidszone.
+2. Genindlæs regnearket. Menu Marineforeningen > Klargør register. Godkend Google-adgang. Arrangementer og Tilmeldinger oprettes. Alle arrangementer starter lukket (NEJ). Kontrollér datoer, sæt frist, evt. kapacitet og JA for godkendte arrangementer. Tom kapacitet betyder ingen fast grænse. Fristen gælder hele dagen. Lørdage oprettes 16 uger frem; kør Tilføj kommende lørdage løbende.
+3. I Brevo: verificér afsender, opret API-nøgle. I Apps Script > Projektindstillinger > Script properties: BREVO_API_KEY og BREVO_SENDER. Nøglen må aldrig deles eller ligge på GitHub.
+4. Deploy > New deployment > Web app, execute as ejer, access Anyone (hvis kontoen tillader det). Kopiér /exec-adressen til script property WEBAPP_URL. Kontrollér anonym adgang i privat browser. Kun publicEvent, register, cancelInfo og cancelRegistration er offentlige RPC-funktioner; adminfunktioner har underscore-suffiks og ligger i det private regneark.
+5. Test med eget testarrangement, egen mail og lille kapacitet. Kontrollér dublet, fuldt arrangement, frist, afmeldingslink og mailstatus. Test også at adminfunktioner ikke kan kaldes fra offentlig formular. Test med rigtig Brevo før aktivering. Bekræft GDPR-tekst, slettefrist og adgangsrettigheder med bestyrelsen. Der er ikke indbygget CAPTCHA; vurder misbrugsbeskyttelse før bred offentliggørelse.
+6. I website/signup-config.js: indsæt /exec-adressen i url og de godkendte arrangement-ID'er i enabledIds. Kun disse knapper bruger onlineformular; resten beholder mailto. Opdater listen når nye arrangementer åbnes. Websitet viser fortsat den eksisterende kalender, ikke en live synkroniseret Google-kalender. Frivilligopgaver er stadig mailbaserede.
+7. Webmaster: privat regneark > Marineforeningen. Manuel tilmelding (også uden mail), afmeld valgt række, gensend mail, vis deltagerliste til print. Brug arrangement-ID fra Arrangementer. Ret ikke systemkolonner manuelt. Mailstatus viser accepteret af Brevo, ikke leveret. Mailfejl kan gensendes manuelt. Ingen automatiske nyhedsbreve eller fællesudsendelser endnu.
 
-OBS: Dette er en designopdatering. Den indeholder IKKE de 44 PDF-filer.
-PDF-arkivet skal fortsat overføres til kabysrygtet/pdf/ separat.
-Supabase-admin er ikke konfigureret eller testet i produktion.
+Mailbudget: lokal sikkerhedsgrænse 280 afsendelsesforsøg/dag, så 20 er reserveret til andre mails under Brevos gratisgrænse på 300/dag. Andre Brevo-udsendelser tæller også; systemet kan ikke se deres forbrug. Ingen automatisk betaling. Ved fejl gemmes tilmeldingen og webmaster ser mailstatus.
+
+TEST: node test-local.js i apps-script/ (simulerede Google/Brevo-tjenester). Ingen live-opsætning eller mailafsendelse er udført. Browsernavigation var blokeret i testmiljøet; fysisk enhedstest mangler.
