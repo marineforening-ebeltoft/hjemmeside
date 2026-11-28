@@ -1,1 +1,1 @@
-v5.9: opdateret forside, eksisterende popup med næste arrangement, fast bundbjælke og seks kommende arrangementer. Upload udpakkede HTML-filer; behold alle eksisterende billeder og PDF-filer. Brevo og fælles tilmeldingsregister er ikke aktiveret. Historiske originaler ligger stadig på gammel side. JavaScript syntaks kontrolleret; ingen browsertest.
+v6.0 – seks nye originale billeder. Udpak og upload index.html samt assets/img/ med de nye filer. Behold eksisterende PDF-filer og øvrige mapper. Ken Burns-forsiden er uændret. Brevo er ikke aktiveret.
